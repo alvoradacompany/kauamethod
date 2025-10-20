@@ -1,0 +1,29 @@
+-- Services
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
+
+-- Cria uma ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "BlackScreenOFF"
+screenGui.ResetOnSpawn = false
+screenGui.Parent = PlayerGui
+
+-- Cria a tela preta
+local blackFrame = Instance.new("Frame")
+blackFrame.Size = UDim2.new(1, 0, 1, 0)
+blackFrame.Position = UDim2.new(0, 0, 0, 0)
+blackFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+blackFrame.BorderSizePixel = 0
+blackFrame.Parent = screenGui
+
+-- Cria o texto "OFF" verde
+local offLabel = Instance.new("TextLabel")
+offLabel.Size = UDim2.new(0, 200, 0, 100) -- tamanho do texto
+offLabel.Position = UDim2.new(0.5, -100, 0.5, -50) -- centralizado
+offLabel.BackgroundTransparency = 1
+offLabel.Text = "OFF"
+offLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+offLabel.TextScaled = true
+offLabel.Font = Enum.Font.SourceSansBold
+offLabel.Parent = blackFrame
